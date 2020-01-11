@@ -40,20 +40,32 @@ export class Piece {
 
     runDistance (next, param, board: Board): object[]
     {
-        let s = next(param);
+        let move = next(param);
         
         const moves = [];
         while(true)
         {
-            if(board.onTheBoard(s))
-                moves.push(s);
+            if (this.validatePotential(move,board))
+                this.possibleMoves.push(move);
             else
                 break;
             
-            s = next(s);
+            move = next(move);
         }
         
         return moves;
+    }
+
+    validatePotential(move, board){
+        if (
+            board.onTheBoard(move) &&
+            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
+            board.onTheBoard(move) &&
+            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
+        )
+        return true;
+
+        return false
     }
 
     // straign advance

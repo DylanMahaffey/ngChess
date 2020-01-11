@@ -16,75 +16,35 @@ export class Knight extends Piece {
         let move;
 
         move = { Y: this.Y + 2, X: this.X + 1}
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = {Y: this.Y + 2, X: this.X - 1 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = {Y: this.Y + 1, X: this.X + 2 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = { Y: this.Y - 1, X: this.X + 2 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = { Y: this.Y - 2, X: this.X + 1 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) && 
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = { Y: this.Y - 2, X: this.X - 1 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = { Y: this.Y + 1, X: this.X - 2 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         move = { Y: this.Y - 1, X: this.X - 2 }
-        if (
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied ||
-            board.onTheBoard(move) &&
-            !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
-        )
+        if (this.validatePotential(move, board))
         this.possibleMoves.push(move);
 
         return this.possibleMoves;
