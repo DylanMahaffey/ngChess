@@ -45,7 +45,19 @@ export class Piece {
         const moves = [];
         while(true)
         {
-            if (this.validatePotential(move,board))
+            // console.log(move,board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]));
+            
+            if (
+                board.onTheBoard(move) && 
+                board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).occupied && 
+                !board.occupiedSpace(board.spaces[`${move.Y}${move.X}`]).friendly
+            )
+            {
+                console.log('enemy!');
+                
+                this.possibleMoves.push(move);
+                break;
+            } else if (this.validatePotential(move, board))
                 this.possibleMoves.push(move);
             else
                 break;
