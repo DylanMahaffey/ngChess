@@ -1,8 +1,0 @@
-<h2 class="piece {{ board.turn }}">{{ board.turn }}</h2>
-<div class="container">
-    <div id="board">
-        <div class="{{ digestClasses(square.classes) }} {{square.id}}" *ngFor="let square of objectValues(board.spaces)" (click)="squareSelected(square)">
-            <span *ngIf="square.piece" class="piece {{ square.piece.color }}">{{ placePiece(square) }}</span>
-        </div>
-    </div>
-</div>

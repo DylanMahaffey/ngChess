@@ -1,0 +1,9 @@
+
+<div class="container">
+    <div id="board">
+        <div class="{{ square.digestClasses() }} {{square.id}}" *ngFor="let square of objectValues(squares)"
+            (click)="squareSelected(square)">
+            <span *ngIf="square.piece" class="piece {{ square.piece.color }}">{{ square.placePiece() }}</span>
+        </div>
+    </div>
+</div>

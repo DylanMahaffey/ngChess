@@ -3,12 +3,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ArenaComponent } from './arena/arena.component';
+import { VsComponent } from './vs/vs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ArenaComponent
+    VsComponent
   ],
   imports: [
     BrowserModule,

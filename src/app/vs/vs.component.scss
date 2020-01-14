@@ -3,24 +3,23 @@ h2.piece{
 }
 .container{
     width: 100%;
-    display: flex;
-    justify-content: center;
+    // display: flex;
+    // justify-content: center;
 }
 #board{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column-reverse;
-    width: 800px;
-    height: 900px;
-    text-align: center;
+    width: 100vw;
 }
-.space{
-    width: 100px;
-    height: 100px;
+.square{
+    width: 10vh;
+    height: 10vh;
     border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+    float: left;
+}
+.squareClear{
+    clear: left;
 }
 .dark{
     background: black;
@@ -46,8 +45,8 @@ h2.piece{
     background: firebrick;
 }
 
-.piece{
-    padding: 15px;
+span.piece{
+    padding: 10%;
     border-radius: 20%;
 }
 .white{
